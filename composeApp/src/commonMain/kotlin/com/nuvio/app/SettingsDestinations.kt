@@ -19,9 +19,11 @@ import com.nuvio.app.navigation.CollectionEditorRoute
 import com.nuvio.app.navigation.CollectionsRoute
 import com.nuvio.app.navigation.FolderDetailRoute
 import com.nuvio.app.navigation.NuvioNavigator
+import com.nuvio.app.navigation.MultiViewerRoute
 import com.nuvio.app.navigation.PartyRoute
 import com.nuvio.app.navigation.SettingsPageRoute
 import nuvio.composeapp.generated.resources.Res
+import nuvio.composeapp.generated.resources.multiview_title
 import nuvio.composeapp.generated.resources.party_title
 import org.jetbrains.compose.resources.stringResource
 
@@ -46,6 +48,7 @@ internal fun SettingsRootDestination(
 ) {
     val onBack = rememberGuardedPopBackStack(navController, route)
     val watchPartyTitle = stringResource(Res.string.party_title)
+    val multiViewerTitle = stringResource(Res.string.multiview_title)
     SettingsScreen(
         modifier = Modifier.fillMaxSize(),
         initialPageName = route.pageName,
@@ -60,6 +63,9 @@ internal fun SettingsRootDestination(
         },
         onWatchPartyClick = {
             navController.navigate(PartyRoute(title = watchPartyTitle))
+        },
+        onMultiViewerClick = {
+            navController.navigate(MultiViewerRoute(title = multiViewerTitle))
         },
         onCheckForUpdatesClick = onCheckForUpdates,
         onTestUpdateBannerClick = onTestUpdateBanner,

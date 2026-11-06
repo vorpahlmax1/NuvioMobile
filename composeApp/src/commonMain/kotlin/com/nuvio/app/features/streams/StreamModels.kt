@@ -33,6 +33,11 @@ data class StreamItem(
     val externalSubtitles: List<StreamSubtitle> = emptyList(),
     val badges: List<StreamBadge> = emptyList(),
     val serverTarget: ServerPlaybackTarget? = null,
+    /** Optional Multiview / F1 scraper fields; ignored by stock single-player UI. */
+    val f1Role: String? = null,
+    val f1DriverCode: String? = null,
+    val f1CamId: String? = null,
+    val f1SessionId: String? = null,
 ) {
     val streamLabel: String
         get() = name?.takeIf { it.isNotBlank() } ?: "Stream"

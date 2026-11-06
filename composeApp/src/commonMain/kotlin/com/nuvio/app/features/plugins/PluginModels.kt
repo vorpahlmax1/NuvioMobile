@@ -87,6 +87,10 @@ data class PluginRuntimeResult(
     val infoHash: String? = null,
     val headers: Map<String, String>? = null,
     val subtitles: List<PluginSubtitleResult>? = null,
+    val f1Role: String? = null,
+    val f1DriverCode: String? = null,
+    val f1CamId: String? = null,
+    val f1SessionId: String? = null,
 )
 
 @Serializable

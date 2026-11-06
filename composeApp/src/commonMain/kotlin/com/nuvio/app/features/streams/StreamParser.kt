@@ -62,6 +62,10 @@ object StreamParser {
                     filename = hintsObj?.string("filename"),
                     proxyHeaders = proxyHeaders,
                 ),
+                f1Role = obj.string("f1Role"),
+                f1DriverCode = obj.string("f1DriverCode"),
+                f1CamId = obj.string("f1CamId"),
+                f1SessionId = obj.string("f1SessionId"),
             )
         }
     }

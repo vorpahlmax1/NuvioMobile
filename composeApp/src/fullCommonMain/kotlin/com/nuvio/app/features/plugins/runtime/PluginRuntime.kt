@@ -244,6 +244,10 @@ internal object PluginRuntime {
                     infoHash = item.stringOrNull("infoHash"),
                     headers = headers,
                     subtitles = subtitles,
+                    f1Role = item.stringOrNull("f1Role"),
+                    f1DriverCode = item.stringOrNull("f1DriverCode"),
+                    f1CamId = item.stringOrNull("f1CamId"),
+                    f1SessionId = item.stringOrNull("f1SessionId"),
                 )
             }.filter { it.url.isNotBlank() }
         }.getOrElse { emptyList() }

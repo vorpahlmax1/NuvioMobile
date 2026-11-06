@@ -152,6 +152,7 @@ fun SettingsScreen(
     onTestUpdateBannerClick: (() -> Unit)? = null,
     onCollectionsClick: () -> Unit = {},
     onWatchPartyClick: () -> Unit = {},
+    onMultiViewerClick: () -> Unit = {},
 ) {
     BoxWithConstraints(
         modifier = modifier.fillMaxSize(),
@@ -422,6 +423,7 @@ fun SettingsScreen(
                         onTestUpdateBannerClick = onTestUpdateBannerClick,
                         onCollectionsClick = onCollectionsClick,
                         onWatchPartyClick = onWatchPartyClick,
+                        onMultiViewerClick = onMultiViewerClick,
                     )
                 } else {
                     MobileSettingsScreen(
@@ -472,6 +474,7 @@ fun SettingsScreen(
                         onTestUpdateBannerClick = onTestUpdateBannerClick,
                         onCollectionsClick = onCollectionsClick,
                         onWatchPartyClick = onWatchPartyClick,
+                        onMultiViewerClick = onMultiViewerClick,
                     )
                 }
             }
@@ -528,6 +531,7 @@ private fun MobileSettingsScreen(
     onTestUpdateBannerClick: (() -> Unit)? = null,
     onCollectionsClick: () -> Unit = {},
     onWatchPartyClick: () -> Unit = {},
+    onMultiViewerClick: () -> Unit = {},
 ) {
     val saveableStateHolder = rememberSaveableStateHolder()
     saveableStateHolder.SaveableStateProvider(page.name) {
@@ -638,6 +642,7 @@ private fun MobileSettingsScreen(
                             onPageClick = { openSearchTarget(SettingsSearchTarget.Page(it)) },
                             onSwitchProfileClick = onSwitchProfile,
                             onWatchPartyClick = watchPartyRowClick,
+                            onMultiViewerClick = onMultiViewerClick,
                         )
                     }
                 }
@@ -870,6 +875,7 @@ private fun TabletSettingsScreen(
     onTestUpdateBannerClick: (() -> Unit)? = null,
     onCollectionsClick: () -> Unit = {},
     onWatchPartyClick: () -> Unit = {},
+    onMultiViewerClick: () -> Unit = {},
 ) {
     var selectedCategory by rememberSaveable { mutableStateOf(SettingsCategory.Look.name) }
     val activeCategory = settingsCategoryForName(selectedCategory)
@@ -1038,6 +1044,7 @@ private fun TabletSettingsScreen(
                                 onPageClick = ::openInlinePage,
                                 onSwitchProfileClick = onSwitchProfile,
                                 onWatchPartyClick = watchPartyRowClick,
+                                onMultiViewerClick = onMultiViewerClick,
                                 category = activeCategory,
                             )
                         }

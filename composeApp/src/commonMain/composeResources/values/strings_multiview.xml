@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="multiview_title">Multiview</string>
+    <string name="multiview_settings_description">Watch multiple streams at once with exclusive audio focus</string>
+</resources>

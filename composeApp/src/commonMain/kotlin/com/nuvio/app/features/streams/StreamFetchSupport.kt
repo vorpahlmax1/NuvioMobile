@@ -109,6 +109,7 @@ internal fun PluginRuntimeResult.toStreamItem(
 
     return StreamItem(
         name = name ?: title,
+        title = title,
         description = subtitleParts.joinToString(" • ").ifBlank { null },
         url = url,
         infoHash = infoHash,
@@ -131,7 +132,11 @@ internal fun PluginRuntimeResult.toStreamItem(
                 name = it.name,
                 headers = it.headers
             )
-        } ?: emptyList()
+        } ?: emptyList(),
+        f1Role = f1Role,
+        f1DriverCode = f1DriverCode,
+        f1CamId = f1CamId,
+        f1SessionId = f1SessionId,
     )
 }
 
