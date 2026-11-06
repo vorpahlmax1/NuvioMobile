@@ -156,3 +156,11 @@ data class PlayerRoute(
     override val hidesNavigationBar: Boolean
         get() = true
 }
+
+@Serializable
+data class MultiViewerRoute(
+    override val title: String = "Multiview",
+) : AppRoute {
+    override val hidesNavigationBar: Boolean
+        get() = true
+}
